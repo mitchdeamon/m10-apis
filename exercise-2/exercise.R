@@ -8,7 +8,14 @@ setwd('~/Documents/info-201/m10-apis/exercise-2/')
 
 
 # Write a function that allows you to specify an artist, and returns the top 10 tracks of that artist
-
+artist <- function(art_name) {
+  base <- 'https://play.spotify.com/artist/2gBjLmx6zQnFGQJCAQpRgw'
+  search <- 'q='
+  type <- '&type=artist'
+  query.url <- paste0(base, search, type)
+  data <- fromJSON(query.url)
+  return(data)
+}
 
 
 # What are the top 10 tracks by Nelly?
